@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+    <bean id="dev" class="org.example.Dev">
+    <!--we can use the id name in the context.getBean(idName) instead of Dev.class -->
+        <!-- we can let spring assign value from the xml here-->
+        <property name="age" value="12"/>
+
+         <!--we can add a constructor argument as well from here, For the "size" variable in the constructor-->
+        <constructor-arg index="0" value="14"/>
+
+        <!--similar to auto wire creating connection between objects-->
+        <!--Setter injection-->
+        <!-- <property name="laptop" ref="lapObj"/>
+
+         constructor injection-->
+       <!-- <constructor-arg index ="0" value="14"/>-->
+
+        <!--desktop object is a type of computer-->
+        <!--<property name="com" ref="desktopObj"/>-->
+    </bean>
+
+    <bean id="lapObj" class="org.example.Laptop">
+
+    </bean>
+    <bean id="desktopObj" class="org.example.Desktop">
+
+    </bean>
+</beans> 
